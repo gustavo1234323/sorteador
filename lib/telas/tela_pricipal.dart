@@ -75,9 +75,9 @@ class _HomePageState extends State<HomePage> {
           "Baleia",
           style: TextStyle(fontSize: 30, backgroundColor: Colors.blue),
         ),
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 207, 25, 25),
       ),
-      backgroundColor: Colors.amber,
+      backgroundColor: const Color.fromARGB(255, 185, 129, 89),
       floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           sortear();
