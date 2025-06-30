@@ -13,7 +13,10 @@ class _HomePageState extends State<HomePage> {
   // isso é uma lista de texto, que contem o endereço das imagens
   List<String> images = ['assets/1.jpeg', 'assets/2.jpeg', 'assets/3.jpeg'];
 
+  
   List<int> imagemSelecionada = [0, 0, 0];
+
+  int conatdor = 0;
 
   void sortear() {
     int i = 0;
@@ -36,6 +39,9 @@ class _HomePageState extends State<HomePage> {
                 content: Text("voce ganhou"),
               ),
         );
+        setState(() {
+          conatdor++;
+        });
       }
     
   }
@@ -54,9 +60,13 @@ class _HomePageState extends State<HomePage> {
 
     if (imagemSelecionada[0] == imagemSelecionada[1] &&
         imagemSelecionada[1] == imagemSelecionada[2]) {
-      showDialog(
+
+      showDialog( 
         context: context, 
         builder:
+      
+
+
             (context) => AlertDialog(
               title: Text("Parabéns!"),
               content: Text("Você ganhou!"),
@@ -112,6 +122,14 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          Text(
+            "pontuaçao: " + conatdor.toString(),
+            style: TextStyle(
+              fontSize: 30,
+             color: Colors.black,
+            fontWeight: FontWeight.w900,
+            ),
+          )
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
